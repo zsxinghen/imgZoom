@@ -1,0 +1,325 @@
+/** 
+ *项目图库
+ */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.el-slider.is-vertical .el-slider__runway {
+  height: 100px;
+  .el-slider__button-wrapper {
+    height: 12px;
+    width: 12px;
+    left: -4px;
+  }
+  .el-slider__button {
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+  }
+}
+.el-popover {
+  position: absolute;
+  background: #fff;
+  min-width: 10px;
+  margin: 5px 0 0 -12px;
+  border: 1px solid #ebeef5;
+  padding: 5px 0px 15px;
+  z-index: 2000;
+  color: #606266;
+  line-height: 1.4;
+  text-align: justify;
+  font-size: 14px;
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  .popper__arrow::after {
+    bottom: 1px;
+    margin-left: 0px !important;
+    border-top-color: #fff;
+    border-bottom-width: 0;
+  }
+}
+.img-gallery {
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  display: flex;
+
+  &.left {
+    flex: 0 0 240px;
+    border-right: 1px solid rgb(249, 249, 249);
+    box-sizing: border-box;
+  }
+
+  &.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgb(44, 50, 88);
+
+    .right-header {
+      flex: 0 0 64px;
+      padding: 0 10px;
+      line-height: 64px;
+      box-sizing: border-box;
+      background: #fff;
+
+      &.left {
+        float: left;
+      }
+
+      &.right {
+        float: right;
+        .gallery_edit {
+          content: url("../icon/gallery_edit.png");
+          vertical-align: bottom;
+          margin-right: 5px;
+          height: 12px;
+        }
+        .gallery_cancel {
+          content: url("../icon/gallery_cancel.png");
+          vertical-align: bottom;
+          margin-right: 5px;
+          height: 12px;
+        }
+      }
+    }
+
+    .right-body {
+      flex: 1;
+      padding: 0 0 0 10px;
+      margin-right: 10px;
+      margin-top: 20px;
+      overflow: auto;
+
+      ul {
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          margin-bottom: 8px;
+          background: #fff;
+          height: 128px;
+          min-width: 12.5%;
+          max-width: 12.5%;
+          border: 8px solid rgb(44, 50, 88);
+          border-top: none;
+          box-sizing: border-box;
+          padding: 8px;
+          position: relative;
+
+          .img-box {
+            background: rgb(239, 239, 239);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .el-checkbox,
+            .el-checkbox__input {
+              vertical-align: top !important;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+
+            .el-checkbox__inner:hover {
+              border-color: #dcdfe6;
+            }
+
+            img {
+              max-width: 100%;
+              max-height: 100%;
+            }
+          }
+
+          .download-icon {
+            width: 30px;
+            height: 30px;
+            // background-color: rgb(244, 96, 96);
+            border-radius: 30px 0 0 0;
+            /* 左上、右上、右下、左下 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            content: url("../icon/gallert_no_download.png");
+          }
+        }
+      }
+    }
+
+    /*滚动条样式*/
+    .right-body::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 4px;
+      /*高宽分别对应横竖滚动条的尺寸*/
+      height: 8px;
+    }
+
+    .right-body::-webkit-scrollbar-thumb {
+      /*滚动条里面小方块*/
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      background: rgba(83, 88, 118, 1);
+    }
+
+    .right-body::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0;
+      background: rgb(44, 50, 88);
+    }
+  }
+
+  .el-dialog__header {
+    padding: 10px 20px 10px;
+    background: rgb(32, 119, 230);
+
+    .el-dialog__title {
+      color: #fff;
+    }
+  }
+
+  .el-dialog__headerbtn {
+    top: 16px;
+
+    .el-dialog__close {
+      color: #fff;
+    }
+  }
+
+  .el-dialog__body {
+    text-align: center;
+    padding: 20px 40px 10px 0;
+    position: relative;
+    .dialog-body-main {
+      height: 360px;
+      // background: green;
+      margin-left: 40px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      .icon {
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        transform: translateY(-50%);
+        height: 36px;
+        &.previous {
+          left: 16px;
+          content: url("../icon/gallery_previous.png");
+        }
+        &.next {
+          right: 16px;
+          content: url("../icon/gallery_next.png");
+        }
+      }
+      img {
+        max-width: 100%;
+        height: 100%;
+        width: auto;
+        position: relative;
+        cursor: pointer;
+      }
+    }
+    // /*滚动条样式*/
+    // .dialog-body-main::-webkit-scrollbar {
+    //   /*滚动条整体样式*/
+    //   width: 0px;
+    //   /*高宽分别对应横竖滚动条的尺寸*/
+    //   height: 0px;
+    // }
+
+    // .dialog-body-main::-webkit-scrollbar-thumb {
+    //   /*滚动条里面小方块*/
+    //   border-radius: 0px;
+    //   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    //   background: rgba(83, 88, 118, 1);
+    // }
+
+    // .dialog-body-main::-webkit-scrollbar-track {
+    //   /*滚动条里面轨道*/
+    //   -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.2);
+    //   border-radius: 0;
+    //   background: rgb(44, 50, 88);
+    // }
+    .dialog-footer {
+      height: 30px;
+      line-height: 30px;
+      margin-left: 40px;
+      .el-button--mini,
+      .el-button--mini.is-round {
+        padding: 5px 15px;
+      }
+      .el-slider {
+        transform: rotate(-90deg);
+      }
+      .el-slider__button {
+        width: 9px;
+        height: 8px;
+        border: 1px solid #409eff;
+      }
+      .icon {
+        vertical-align: middle;
+        margin: 0 8px;
+        height: 18px;
+        width: auto;
+        cursor: pointer;
+        &.gallery_zoom {
+          content: url("../icon/gallery_zoom.png");
+        }
+        &.gallert_download {
+          content: url("../icon/gallert_download.png");
+        }
+        &.gallery_previous_on {
+          content: url("../icon/gallery_previous_on.png");
+        }
+        &.gallery_previous_off {
+          cursor: not-allowed;
+          // pointer-events: none;
+
+          content: url("../icon/gallery_previous_off.png");
+        }
+        &.gallery_next_on {
+          content: url("../icon/gallery_next_on.png");
+        }
+        &.gallery_next_off {
+          cursor: not-allowed;
+          // pointer-events: none;
+
+          content: url("../icon/gallery_next_off.png");
+        }
+        &.gallery_return_on {
+          content: url("../icon/gallery_return_on.png");
+        }
+        &.gallery_return_off {
+          cursor: not-allowed;
+          // pointer-events: none;
+
+          content: url("../icon/gallery_return_off.png");
+        }
+        &.gallery_more {
+          content: url("../icon/gallery_more.png");
+        }
+      }
+    }
+  }
+
+  .el-dialog__footer {
+    text-align: center;
+
+    .el-button {
+      width: 96px;
+    }
+  }
+}
